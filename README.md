@@ -5,54 +5,54 @@
 [![Sponsor](https://img.shields.io/badge/Supported_by-GoTo-00a96e.svg)](https://www.gotocompany.com)
 [![Learning Path](https://img.shields.io/badge/Path-AI_Full--Stack_Developer-ff9900.svg)](#)
 
-Dokumentasi resmi pembelajaran, proyek, dan portofolio **Program Asah 2026** (Agustus 2026 – Januari 2027) pada alur belajar **AI Full-Stack Developer** yang diselenggarakan oleh **Dicoding** dan didukung oleh **GoTo**.
+Official documentation for learning progress, projects, and portfolio for **Program Asah 2026** (August 2026 – January 2027) under the **AI Full-Stack Developer** learning path, organized by **Dicoding** and supported by **GoTo**.
 
 ---
 
-## 👤 Profil Peserta
+## 👤 Participant Profile
 
-| Informasi | Detail Peserta |
+| Information | Participant Details |
 | :--- | :--- |
-| **Nama Lengkap** | Ghifari Ezra Ramadhan |
-| **ID Peserta Asah** | `FS290B6Y0665` |
-| **Universitas** | Universitas Pancasila |
-| **Program Studi** | Teknik Informatika |
-| **Alur Belajar** | AI Full-Stack Developer |
+| **Full Name** | Ghifari Ezra Ramadhan |
+| **Asah Participant ID** | `FS290B6Y0665` |
+| **University** | Universitas Pancasila |
+| **Major** | Informatics Engineering |
+| **Learning Path** | AI Full-Stack Developer |
 | **Dicoding Profile** | [ezdev_0](https://www.dicoding.com/users/ezdev_0) |
 
 ---
 
-## 📚 Kurikulum & Progress Pembelajaran
+## 📚 Curriculum & Learning Progress
 
 ### 📌 Mandatory Intensive
 
-| No | Modul / Kelas | Status | Submission / Output |
+| No | Module / Course | Status | Submission / Output |
 | :---: | :--- | :---: | :--- |
-| 1 | **Belajar Dasar Pemrograman Web** | 🟢 Completed | [AnimeDex Web App](./Belajar%20Dasar%20Pemrograman%20Web) |
-| 2 | **Belajar Dasar Pemrograman JavaScript** | 🟡 In Progress | - |
-| 3 | **Belajar Membuat Front-End Web untuk Pemula** | ⚪ Pending | - |
-| 4 | **Belajar Membuat Aplikasi Web dengan React** | ⚪ Pending | - |
-| 5 | **Belajar Fundamental Aplikasi Web dengan React** | ⚪ Pending | - |
-| 6 | **Belajar Dasar AI** | ⚪ Pending | - |
-| 7 | **Belajar Back-End Pemula dengan JavaScript** | ⚪ Pending | - |
-| 8 | **Belajar Fundamental Back-End dengan JavaScript** | ⚪ Pending | - |
+| 1 | **Learn Basic Web Programming** | 🟢 Completed | [AnimeDex Web App](./Belajar%20Dasar%20Pemrograman%20Web) |
+| 2 | **Learn Basic JavaScript Programming** | 🟡 In Progress | - |
+| 3 | **Learn Front-End Web Development for Beginners** | ⚪ Pending | - |
+| 4 | **Learn Web Application Development with React** | ⚪ Pending | - |
+| 5 | **Learn Fundamental Web Applications with React** | ⚪ Pending | - |
+| 6 | **Learn Basic AI** | ⚪ Pending | - |
+| 7 | **Learn Beginner Back-End Development with JavaScript** | ⚪ Pending | - |
+| 8 | **Learn Fundamental Back-End Development with JavaScript** | ⚪ Pending | - |
 
 ### 🌟 Bonus Intensive
 
-| No | Modul / Kelas | Status |
+| No | Module / Course | Status |
 | :---: | :--- | :---: |
-| 1 | **Belajar Penerapan AI di Aplikasi Web** | ⚪ Pending |
-| 2 | **Prompt Engineering untuk Software Developer** | ⚪ Pending |
+| 1 | **Learn AI Implementation in Web Applications** | ⚪ Pending |
+| 2 | **Prompt Engineering for Software Developers** | ⚪ Pending |
 
 ---
 
-## 📁 Struktur Repositori
+## 📁 Repository Structure
 
 ```bash
 .
-├── Belajar Dasar Pemrograman Web/   # Sub-repositori proyek AnimeDex (SPA Web App)
+├── Belajar Dasar Pemrograman Web/   # AnimeDex project directory (SPA Web App)
 ├── .gitignore                       # Ignored Git files
-└── README.md                        # Dokumentasi utama repositori
+└── README.md                        # Main repository documentation
 ```
 
 ## 💻 Tech Stack & Tools
