@@ -1,0 +1,9 @@
+footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    /* Mendorong footer menempel ke bagian paling bawah layar */
+    margin-top: auto; 
+}

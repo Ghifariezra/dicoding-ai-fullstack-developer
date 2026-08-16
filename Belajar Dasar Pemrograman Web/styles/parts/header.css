@@ -1,0 +1,174 @@
+/* =========================
+   HEADER STYLES (PASTIKAN INI ADA)
+   ========================= */
+header {
+    background-color: #ffffff; /* Sesuaikan dengan warna background header Anda */
+    padding: 15px 40px;
+    display: flex; /* INI KUNCINYA: Membuat isi header berjejer horizontal */
+    justify-content: space-between; /* Logo di kiri, Menu di kanan */
+    align-items: center; /* Membuat semuanya sejajar di tengah secara vertikal */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================
+   LOGO STYLES
+   ========================= */
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    cursor: pointer; 
+    -webkit-user-select: none; /* Safari/Chrome */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;         /* Standard */
+}
+
+.logo-img {
+    width: 55px;  
+    height: 55px;
+    object-fit: contain; 
+}
+
+.logo-text {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* =========================
+   NAVIGATION STYLES
+   ========================= */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1; 
+    margin-left: 40px; 
+}
+
+/* (Sisa kode nav-links dan dicoding-link Anda di bawah sini tetap sama) */
+
+.logo-text {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin: 0 auto; /* Menjaga menu navigasi tetap persis di tengah */
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+.dicoding-link {
+    display: inline-block;
+    background-color: var(--button-bg);
+    color: var(--button-text) !important;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.dicoding-link:hover {
+    opacity: 0.85;
+}
+
+
+
+
+
+/* =========================================
+   HAMBURGER BUTTON STYLES (Sembunyi di Desktop)
+   ========================================= */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color, #333);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* =========================================
+   RESPONSIVE MOBILE STYLES (< 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    header {
+        padding: 12px 20px;
+    }
+
+    .hamburger {
+        display: flex; /* Tampilkan tombol hamburger di HP */
+    }
+
+    nav {
+        display: none; /* Sembunyikan nav default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--header-bg, #ffffff);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-left: 0;
+    }
+
+    /* Tampilkan menu saat class 'active' ditambahkan lewat JS */
+    nav.active {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* Animasi siluet 'X' pada hamburger saat aktif */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

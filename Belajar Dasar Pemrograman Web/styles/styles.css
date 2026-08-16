@@ -1,0 +1,36 @@
+/* Mengimpor modul CSS lainnya */
+@import url('./parts/header.css');
+@import url('./parts/main.css');
+@import url('./parts/footer.css');
+
+/* CSS Reset & Variabel Global */
+:root {
+    --primary-color: #0b1c33;
+    --secondary-color: #2563eb;
+    --header-bg: #cbe5ff;
+    --bg-color: #f4f7fa;
+    --text-color: #334155;
+    --card-bg: #ffffff;
+    --button-bg: #000000;
+    --button-text: #ffffff;
+    --border-color: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    
+    /* --- TAMBAHKAN 3 BARIS INI AGAR FULL HEIGHT --- */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    /* 100vh memastikan tinggi body minimal sama dengan tinggi layar browser */
+}

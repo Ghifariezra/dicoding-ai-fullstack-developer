@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Primary Metadata -->
+    <title>AnimeDex - Popular Anime Encyclopedia</title>
+    <meta name="title" content="AnimeDex - Popular Anime Encyclopedia">
+    <meta name="description"
+        content="AnimeDex is a popular anime encyclopedia website displaying real-time data from MyAnimeList via Jikan API. Discover top-rated anime and current season releases!">
+    <meta name="keywords"
+        content="AnimeDex, Anime, MyAnimeList, Jikan API, Top Anime, Current Season Anime, Ghifari Ezra Ramadhan">
+    <meta name="author" content="Ghifari Ezra Ramadhan">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AnimeDex - Popular Anime Encyclopedia">
+    <meta property="og:description"
+        content="Explore popular anime lists and the latest seasonal releases in real-time on AnimeDex.">
+    <meta property="og:image" content="assets/AnimeDex.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AnimeDex - Popular Anime Encyclopedia">
+    <meta name="twitter:description"
+        content="Explore popular anime lists and the latest seasonal releases in real-time on AnimeDex.">
+    <meta name="twitter:image" content="assets/AnimeDex.png">
+
+    <!-- Favicon & Stylesheets -->
+    <link rel="icon" href="assets/AnimeDex.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.jikan.moe">
+    <link rel="preconnect" href="https://cdn.myanimelist.net">
+</head>
+
+<body>
+    <header>
+        <div class="header-container" id="logo-container">
+            <img src="assets/AnimeDex.png" alt="AnimeDex Logo" class="logo-img">
+            <h1 class="logo-text">AnimeDex</h1>
+        </div>
+    
+        <!-- Tombol Hamburger untuk layar Mobile -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    
+        <nav id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="#" data-page="beranda">Home</a></li>
+                <li><a href="#" data-page="top-anime">Top Anime</a></li>
+                <li><a href="#" data-page="musim-ini">Current Season</a></li>
+            </ul>
+            <a href="https://www.dicoding.com/users/ezdev_0" target="_blank" rel="noopener noreferrer"
+                class="dicoding-link">Dicoding Profile</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="content">
+            <article class="welcome-article">
+                <h2>Welcome to AnimeDex</h2>
+                <p>This website displays a list of the most popular anime based on real-time data from MyAnimeList (via
+                    <a href="https://docs.api.jikan.moe/" target="_blank" rel="noopener noreferrer" class="api-link">Jikan API</a>).
+                    Scroll down to see today's recommended anime list!
+                </p>
+            
+                <p class="alert-note"><em><strong>Note:</strong> If the anime data fails to load, please refresh or reload the
+                        page.</em></p>
+            </article>
+        
+            <div id="anime-container" class="anime-grid">
+                <p id="loading">Loading anime data...</p>
+            </div>
+        </div>
+
+        <aside>
+            <article class="profile-card">
+                <div class="profile-header">
+                    <h2>Developer Profile</h2>
+                </div>
+                <img src="assets/profile.jpeg" alt="Developer Profile Picture" class="profile-img">
+                <div class="profile-info">
+                    <h3>Ghifari Ezra Ramadhan</h3>
+                    <p><strong>Front-End Web Developer</strong></p>
+                    <p>I am a Dicoding Academy student currently learning to build responsive websites and fetch
+                        data from Public APIs.</p>
+            
+                    <div class="warning-note">
+                        <strong>💡 Note:</strong> This website is built as a <em>Single Page Application (SPA)</em>. Therefore, default
+                        browser navigation features like the <strong>Back</strong> button will not work as expected because it does not
+                        store previous page history.
+                    </div>
+                </div>
+            </article>
+        </aside>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <!-- Menghubungkan JavaScript -->
+    <script type="module" src="scripts/main.js"></script>
+</body>
+
+</html>
