@@ -4,6 +4,7 @@
 [![Organizer](https://img.shields.io/badge/Led_by-Dicoding-d93025.svg)](https://www.dicoding.com)
 [![Sponsor](https://img.shields.io/badge/Supported_by-GoTo-00a96e.svg)](https://www.gotocompany.com)
 [![Learning Path](https://img.shields.io/badge/Path-AI_Full--Stack_Developer-ff9900.svg)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Official documentation for learning progress, projects, and portfolio for **Program Asah 2026** (August 2026 – January 2027) under the **AI Full-Stack Developer** learning path, organized by **Dicoding** and supported by **GoTo**.
 
