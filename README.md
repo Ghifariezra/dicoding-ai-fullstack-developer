@@ -30,8 +30,8 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 | No | Module / Course | Status | Submission / Output |
 | :---: | :--- | :---: | :--- |
 | 1 | **Learn Basic Web Programming** | 🟢 Completed | [AnimeDex Web App](./Belajar%20Dasar%20Pemrograman%20Web) |
-| 2 | **Learn Basic JavaScript Programming** | 🟡 In Progress | - |
-| 3 | **Learn Front-End Web Development for Beginners** | ⚪ Pending | - |
+| 2 | **Learn Basic JavaScript Programming** | 🟢 Completed | [JS Basics & Assessments](./Belajar%20Dasar%20Pemrograman%20JavaScript) |
+| 3 | **Learn Front-End Web Development for Beginners** | 🟡 In Progress | - |
 | 4 | **Learn Web Application Development with React** | ⚪ Pending | - |
 | 5 | **Learn Fundamental Web Applications with React** | ⚪ Pending | - |
 | 6 | **Learn Basic AI** | ⚪ Pending | - |
@@ -52,6 +52,7 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 ```bash
 .
 ├── Belajar Dasar Pemrograman Web/   # AnimeDex project directory (SPA Web App)
+├── Belajar Dasar Pemrograman JavaScript/  # Basic JS assessments, unit testing, OOP & recursive algorithms
 ├── .gitignore                       # Ignored Git files
 └── README.md                        # Main repository documentation
 ```
@@ -60,7 +61,7 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 
 * **Languages:** HTML5, CSS3, JavaScript (ES6+)
 * **Front-End:** React.js, Single Page Application (SPA), Responsive Web Design
-* **Back-End & Database:** Node.js, REST API, Express.js
+* **Back-End & Testing:** Node.js, REST API, Express.js, Native Node Test Runner (`node:test`, `node:assert`)
 * **AI Integration:** AI Fundamentals, Prompt Engineering, LLM Integration
 * **Tools & Environment:** Git, GitHub, VS Code, Postman, Jikan API
 
