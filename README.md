@@ -31,7 +31,7 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 | :---: | :--- | :---: | :--- |
 | 1 | **Learn Basic Web Programming** | 🟢 Completed | [AnimeDex Web App](./Belajar%20Dasar%20Pemrograman%20Web) |
 | 2 | **Learn Basic JavaScript Programming** | 🟢 Completed | [JS Basics & Assessments](./Belajar%20Dasar%20Pemrograman%20JavaScript) |
-| 3 | **Learn Front-End Web Development for Beginners** | 🟡 In Progress | - |
+| 3 | **Learn Front-End Web Development for Beginners** | 🟡 Under Review | [Expense Tracker App](./Belajar%20Membuat%20Front-End%20Web%20untuk%20Pemula) |
 | 4 | **Learn Web Application Development with React** | ⚪ Pending | - |
 | 5 | **Learn Fundamental Web Applications with React** | ⚪ Pending | - |
 | 6 | **Learn Basic AI** | ⚪ Pending | - |
@@ -53,6 +53,7 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 .
 ├── Belajar Dasar Pemrograman Web/   # AnimeDex project directory (SPA Web App)
 ├── Belajar Dasar Pemrograman JavaScript/  # Basic JS assessments, unit testing, OOP & recursive algorithms
+├── Belajar Membuat Front-End Web untuk Pemula/ # Expense Tracker App (DOM manipulation, LocalStorage, Custom Events)
 ├── .gitignore                       # Ignored Git files
 └── README.md                        # Main repository documentation
 ```
