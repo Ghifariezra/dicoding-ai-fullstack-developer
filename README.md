@@ -32,7 +32,7 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 | 1 | **Learn Basic Web Programming** | 🟢 Completed | [AnimeDex Web App](./Belajar%20Dasar%20Pemrograman%20Web) |
 | 2 | **Learn Basic JavaScript Programming** | 🟢 Completed | [JS Basics & Assessments](./Belajar%20Dasar%20Pemrograman%20JavaScript) |
 | 3 | **Learn Front-End Web Development for Beginners** | 🟢 Completed | [Expense Tracker App](./Belajar%20Membuat%20Front-End%20Web%20untuk%20Pemula) |
-| 4 | **Learn Web Application Development with React** | ⚪ Pending | - |
+| 4 | **Learn Web Application Development with React** | 🟢 Completed | [Personal Notes App](./Belajar%20Membuat%20Aplikasi%20Web%20dengan%20React) |
 | 5 | **Learn Fundamental Web Applications with React** | ⚪ Pending | - |
 | 6 | **Learn Basic AI** | ⚪ Pending | - |
 | 7 | **Learn Beginner Back-End Development with JavaScript** | ⚪ Pending | - |
@@ -51,11 +51,12 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 
 ```bash
 .
-├── Belajar Dasar Pemrograman Web/   # AnimeDex project directory (SPA Web App)
-├── Belajar Dasar Pemrograman JavaScript/  # Basic JS assessments, unit testing, OOP & recursive algorithms
+├── Belajar Dasar Pemrograman Web/          # AnimeDex project directory (SPA Web App)
+├── Belajar Dasar Pemrograman JavaScript/   # Basic JS assessments, unit testing, OOP & recursive algorithms
 ├── Belajar Membuat Front-End Web untuk Pemula/ # Expense Tracker App (DOM manipulation, LocalStorage, Custom Events)
-├── .gitignore                       # Ignored Git files
-└── README.md                        # Main repository documentation
+├── Belajar Membuat Aplikasi Web dengan React/  # Personal Notes App (React, controlled forms, search & archive)
+├── .gitignore                              # Ignored Git files
+└── README.md                               # Main repository documentation
 ```
 
 ## 💻 Tech Stack & Tools
