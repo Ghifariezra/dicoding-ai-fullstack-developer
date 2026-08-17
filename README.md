@@ -31,7 +31,7 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 | :---: | :--- | :---: | :--- |
 | 1 | **Learn Basic Web Programming** | 🟢 Completed | [AnimeDex Web App](./Belajar%20Dasar%20Pemrograman%20Web) |
 | 2 | **Learn Basic JavaScript Programming** | 🟢 Completed | [JS Basics & Assessments](./Belajar%20Dasar%20Pemrograman%20JavaScript) |
-| 3 | **Learn Front-End Web Development for Beginners** | 🟡 Under Review | [Expense Tracker App](./Belajar%20Membuat%20Front-End%20Web%20untuk%20Pemula) |
+| 3 | **Learn Front-End Web Development for Beginners** | 🟢 Completed | [Expense Tracker App](./Belajar%20Membuat%20Front-End%20Web%20untuk%20Pemula) |
 | 4 | **Learn Web Application Development with React** | ⚪ Pending | - |
 | 5 | **Learn Fundamental Web Applications with React** | ⚪ Pending | - |
 | 6 | **Learn Basic AI** | ⚪ Pending | - |
