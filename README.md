@@ -29,11 +29,11 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 
 | No | Module / Course | Status | Submission / Output |
 | :---: | :--- | :---: | :--- |
-| 1 | **Learn Basic Web Programming** | 🟢 Completed | [AnimeDex Web App](./Belajar%20Dasar%20Pemrograman%20Web) |
-| 2 | **Learn Basic JavaScript Programming** | 🟢 Completed | [JS Basics & Assessments](./Belajar%20Dasar%20Pemrograman%20JavaScript) |
-| 3 | **Learn Front-End Web Development for Beginners** | 🟢 Completed | [Expense Tracker App](./Belajar%20Membuat%20Front-End%20Web%20untuk%20Pemula) |
-| 4 | **Learn Web Application Development with React** | 🟢 Completed | [Personal Notes App](./Belajar%20Membuat%20Aplikasi%20Web%20dengan%20React) |
-| 5 | **Learn Fundamental Web Applications with React** | ⚪ Pending | - |
+| 1 | **Learn Basic Web Programming** | 🟢 Completed | [AnimeDex Web App](./anime-dex/) |
+| 2 | **Learn Basic JavaScript Programming** | 🟢 Completed | [JS Basics & Assessments](./exercise/) |
+| 3 | **Learn Front-End Web Development for Beginners** | 🟢 Completed | [Expense Tracker App](./expense-tracker-app/) |
+| 4 | **Learn Web Application Development with React** | 🟢 Completed | [Personal Notes App](./personal-notes-app/) |
+| 5 | **Learn Fundamental Web Applications with React** | 🟡 In Progress | [Personal Notes App with API](./personal-notes-app-with-api/) |
 | 6 | **Learn Basic AI** | ⚪ Pending | - |
 | 7 | **Learn Beginner Back-End Development with JavaScript** | ⚪ Pending | - |
 | 8 | **Learn Fundamental Back-End Development with JavaScript** | ⚪ Pending | - |
@@ -51,12 +51,16 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 
 ```bash
 .
-├── Belajar Dasar Pemrograman Web/          # AnimeDex project directory (SPA Web App)
-├── Belajar Dasar Pemrograman JavaScript/   # Basic JS assessments, unit testing, OOP & recursive algorithms
-├── Belajar Membuat Front-End Web untuk Pemula/ # Expense Tracker App (DOM manipulation, LocalStorage, Custom Events)
-├── Belajar Membuat Aplikasi Web dengan React/  # Personal Notes App (React, controlled forms, search & archive)
-├── .gitignore                              # Ignored Git files
-└── README.md                               # Main repository documentation
+├── anime-dex/                    # AnimeDex SPA Web App (Belajar Dasar Pemrograman Web)
+├── exercise/                     # JS basics, unit testing & exercises (Belajar Dasar Pemrograman JavaScript)
+├── expense-tracker-app/          # Expense Tracker App (Belajar Membuat Front-End Web untuk Pemula)
+├── notes-app-react/              # Personal Notes App React variant
+├── personal-notes-app/           # Personal Notes App (Belajar Membuat Aplikasi Web dengan React)
+├── personal-notes-app-with-api/  # Personal Notes App with REST API (Belajar Pengembangan Aplikasi Web dengan React)
+├── VolunterPembuatanAplikasi/    # Volunteer / Side Project Repository
+├── .gitignore                    # Ignored Git files
+├── LICENSE                       # Repository License
+└── README.md                     # Main repository documentation
 ```
 
 ## 💻 Tech Stack & Tools
