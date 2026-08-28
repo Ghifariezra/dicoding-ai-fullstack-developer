@@ -1,81 +1,42 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import NotesList from '../components/NotesList';
-import { getActiveNotes } from '../utils/local-data';
+import SearchBar from '../components/SearchBar';
+import { getActiveNotes } from '../utils/network-data';
 import { FiPlus } from 'react-icons/fi';
+import useNoteSearch from '../hooks/useNoteSearch';
+import LocaleContext from '../contexts/LocaleContext';
 
-// Component Class Utama
-class HomePage extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            notes: getActiveNotes(),
-            keyword: props.defaultKeyword || '',
-        };
-
-        this.onKeywordChangeHandler = this.onKeywordChangeHandler.bind(this);
+export async function homePageLoader() {
+    const { error, data } = await getActiveNotes();
+    if (error) {
+        return [];
     }
-
-    onKeywordChangeHandler(keyword) {
-        this.setState({ keyword });
-        this.props.keywordChange(keyword);
-    }
-
-    render() {
-        // Filter catatan berdasarkan kata kunci pencarian (case-insensitive)
-        const filteredNotes = this.state.notes.filter((note) =>
-            note.title.toLowerCase().includes(this.state.keyword.toLowerCase())
-        );
-
-        return (
-            <section className="homepage">
-                <h2>Catatan Aktif</h2>
-
-                {/* Input Pencarian (Kriteria Opsional 2) */}
-                <div className="search-bar">
-                    <input
-                        type="text"
-                        placeholder="Cari berdasarkan judul..."
-                        value={this.state.keyword}
-                        onChange={(e) => this.onKeywordChangeHandler(e.target.value)}
-                    />
-                </div>
-
-                {/* Component Daftar Catatan */}
-                <NotesList notes={filteredNotes} />
-
-                {/* Tombol Melayang Tambah Catatan */}
-                <div className="homepage__action">
-                    <Link to="/notes/new" className="action" title="Tambah Catatan">
-                        <FiPlus />
-                    </Link>
-                </div>
-            </section>
-        );
-    }
+    return data;
 }
 
-HomePage.propTypes = {
-    defaultKeyword: PropTypes.string,
-    keywordChange: PropTypes.func.isRequired,
-};
-
-function HomePageWrapper() {
-    const [searchParams, setSearchParams] = useSearchParams();
-    const keyword = searchParams.get('keyword') || '';
-
-    function changeSearchParams(keyword) {
-        setSearchParams(keyword ? { keyword } : {});
-    }
+export default function HomePage() {
+    const { locale } = useContext(LocaleContext);
+    const notes = useLoaderData();
+    const { keyword, handleSearch, filteredNotes } = useNoteSearch(notes);
 
     return (
-        <HomePage
-            defaultKeyword={keyword}
-            keywordChange={changeSearchParams}
-        />
+        <section className="homepage">
+            <h2>{locale === 'id' ? 'Catatan Aktif' : 'Active Notes'}</h2>
+
+            <SearchBar keyword={keyword} keywordChange={handleSearch} />
+
+            <NotesList notes={filteredNotes} />
+
+            <div className="homepage__action">
+                <Link
+                    to="/notes/new"
+                    className="action"
+                    title={locale === 'id' ? 'Tambah Catatan' : 'Add Note'}
+                >
+                    <FiPlus />
+                </Link>
+            </div>
+        </section>
     );
 }
-
-export default HomePageWrapper;

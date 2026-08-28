@@ -1,76 +1,86 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
-import { addNote } from '../utils/local-data';
-import { FiCheck } from 'react-icons/fi';
+import { useContext, useCallback } from 'react';
+import { Form, redirect } from 'react-router-dom';
+import { addNote } from '../utils/network-data';
+import { FiCheck, FiEdit3 } from 'react-icons/fi';
+import LocaleContext from '../contexts/LocaleContext';
+import useInput from '../hooks/useInput';
 
-class AddPage extends React.Component {
-    constructor(props) {
-        super(props);
+export async function addNoteAction({ request }) {
+    const formData = await request.formData();
+    const title = formData.get('title');
+    const body = formData.get('body');
 
-        this.state = {
-            title: '',
-            body: '',
-        };
-
-        this.onTitleChangeHandler = this.onTitleChangeHandler.bind(this);
-        this.onInputBodyHandler = this.onInputBodyHandler.bind(this);
-        this.onSubmitHandler = this.onSubmitHandler.bind(this);
+    if (!title || !body) {
+        return { error: true };
     }
 
-    onTitleChangeHandler(event) {
-        this.setState({ title: event.target.value });
+    const { error } = await addNote({ title, body });
+    if (error) {
+        return { error: true };
     }
 
-    onInputBodyHandler(event) {
-        this.setState({ body: event.target.innerHTML });
-    }
+    return redirect('/');
+}
 
-    onSubmitHandler(event) {
-        event.preventDefault();
-        addNote({
-            title: this.state.title,
-            body: this.state.body,
-        });
-        this.props.navigate('/');
-    }
+export default function AddPage() {
+    const { locale } = useContext(LocaleContext);
+    const [title, handleTitleChange] = useInput('');
+    const [body, , setBody] = useInput('');
 
-    render() {
-        return (
-            <section className="add-new-page">
+    const handleBodyInput = useCallback((event) => {
+        setBody(event.currentTarget.textContent);
+    }, [setBody]);
+
+    const isFormValid = title.trim() !== '' && body.trim() !== '';
+
+    return (
+        <section className="add-new-page">
+            <Form method="post">
                 <div className="add-new-page__input">
                     <input
                         className="add-new-page__input__title"
                         type="text"
-                        placeholder="Catatan rahasia"
-                        value={this.state.title}
-                        onChange={this.onTitleChangeHandler}
+                        name="title"
+                        placeholder={
+                            locale === 'id' ? 'Catatan rahasia' : 'Secret note'
+                        }
+                        value={title}
+                        onChange={handleTitleChange}
+                        required
                     />
                     <div
                         className="add-new-page__input__body"
                         contentEditable
-                        data-placeholder="Sebenarnya saya adalah..."
-                        onInput={this.onInputBodyHandler}
+                        data-placeholder={
+                            locale === 'id'
+                                ? 'Sebenarnya saya adalah...'
+                                : 'Actually I am...'
+                        }
+                        onInput={handleBodyInput}
                     />
+                    {/* Input tersembunyi agar teks contentEditable terkirim via Form */}
+                    <input type="hidden" name="body" value={body} />
                 </div>
+
                 <div className="add-new-page__action">
-                    <button className="action" type="button" title="Simpan" onClick={this.onSubmitHandler}>
-                        <FiCheck />
+                    <button
+                        className="action"
+                        type="submit"
+                        title={
+                            isFormValid
+                                ? locale === 'id'
+                                    ? 'Simpan Catatan'
+                                    : 'Save Note'
+                                : locale === 'id'
+                                    ? 'Lengkapi Judul dan Isi'
+                                    : 'Complete Title and Body'
+                        }
+                        disabled={!isFormValid}
+                    >
+                        {isFormValid ? <FiCheck /> : <FiEdit3 />}
                     </button>
                 </div>
-            </section>
-        );
-    }
+            </Form>
+        </section>
+    );
 }
-
-AddPage.propTypes = {
-    navigate: PropTypes.func.isRequired,
-};
-
-function AddPageWrapper() {
-    const navigate = useNavigate();
-
-    return <AddPage navigate={navigate} />;
-}
-
-export default AddPageWrapper;

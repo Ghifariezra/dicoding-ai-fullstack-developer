@@ -51,12 +51,21 @@ header {
 
 header h1 {
   flex: 1;
+  font-size: 28px;
+}
+
+header .navigation ul {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
 }
 
 header .navigation ul li {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   font-size: 24px;
-  margin: 0 8px;
+  margin: 0;
 }
 
 main {
@@ -211,11 +220,12 @@ main {
   color: var(--on-background);
   display: flex;
   align-items: center;
-  margin: 0 16px;
+  margin: 0;
+  padding: 0;
 }
 
 .toggle-theme {
-  font-size: 36px;
+  font-size: 28px;
 }
 
 .toggle-locale {
@@ -264,9 +274,10 @@ main {
   gap: 8px;
   background-color: transparent;
   border: 0;
-  font-size: 28px;
+  font-size: 20px;
   cursor: pointer;
   color: var(--on-background);
+  padding: 0;
 }
 
 @media screen and (min-width: 650px) {

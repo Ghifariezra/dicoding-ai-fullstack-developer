@@ -1,83 +1,90 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { useLoaderData, Form, redirect } from 'react-router-dom';
 import parser from 'html-react-parser';
 import { FiArchive, FiInbox, FiTrash2 } from 'react-icons/fi';
-import { getNote, deleteNote, archiveNote, unarchiveNote } from '../utils/local-data';
+import { getNote, deleteNote, archiveNote, unarchiveNote } from '../utils/network-data';
 import { showFormattedDate } from '../utils';
+import LocaleContext from '../contexts/LocaleContext';
 
-class DetailPage extends React.Component {
-    constructor(props) {
-        super(props);
+export async function detailPageLoader({ params }) {
+    const { error, data } = await getNote(params.id);
+    if (error) {
+        return null;
+    }
+    return data;
+}
 
-        this.state = {
-            note: getNote(props.id),
-        };
+export async function detailPageAction({ request, params }) {
+    const formData = await request.formData();
+    const intent = formData.get('intent');
 
-        this.onDeleteHandler = this.onDeleteHandler.bind(this);
-        this.onArchiveHandler = this.onArchiveHandler.bind(this);
-        this.onUnarchiveHandler = this.onUnarchiveHandler.bind(this);
+    if (intent === 'archive') {
+        await archiveNote(params.id);
+    } else if (intent === 'unarchive') {
+        await unarchiveNote(params.id);
+    } else if (intent === 'delete') {
+        await deleteNote(params.id);
     }
 
-    onDeleteHandler() {
-        deleteNote(this.props.id);
-        this.props.navigate('/');
-    }
+    return redirect('/');
+}
 
-    onArchiveHandler() {
-        archiveNote(this.props.id);
-        this.props.navigate('/');
-    }
+export default function DetailPage() {
+    const { locale } = useContext(LocaleContext);
+    const note = useLoaderData();
 
-    onUnarchiveHandler() {
-        unarchiveNote(this.props.id);
-        this.props.navigate('/');
-    }
-
-    render() {
-        if (!this.state.note) {
-            return (
-                <section className="detail-page">
-                    <p>Catatan tidak ditemukan!</p>
-                </section>
-            );
-        }
-
+    if (!note) {
         return (
             <section className="detail-page">
-                <h3 className="detail-page__title">{this.state.note.title}</h3>
-                <p className="detail-page__createdAt">{showFormattedDate(this.state.note.createdAt)}</p>
-                <div className="detail-page__body">{parser(this.state.note.body)}</div>
-
-                <div className="detail-page__action">
-                    {this.state.note.archived ? (
-                        <button className="action" type="button" title="Aktifkan" onClick={this.onUnarchiveHandler}>
-                            <FiInbox />
-                        </button>
-                    ) : (
-                        <button className="action" type="button" title="Arsipkan" onClick={this.onArchiveHandler}>
-                            <FiArchive />
-                        </button>
-                    )}
-                    <button className="action" type="button" title="Hapus" onClick={this.onDeleteHandler}>
-                        <FiTrash2 />
-                    </button>
-                </div>
+                <p>{locale === 'id' ? 'Catatan tidak ditemukan!' : 'Note not found!'}</p>
             </section>
         );
     }
+
+    return (
+        <section className="detail-page">
+            <h3 className="detail-page__title">{note.title}</h3>
+            <p className="detail-page__createdAt">{showFormattedDate(note.createdAt, locale)}</p>
+            <div className="detail-page__body">{parser(note.body)}</div>
+
+            <div className="detail-page__action">
+                {note.archived ? (
+                    <Form method="post">
+                        <button
+                            className="action"
+                            type="submit"
+                            name="intent"
+                            value="unarchive"
+                            title={locale === 'id' ? 'Aktifkan' : 'Unarchive'}
+                        >
+                            <FiInbox />
+                        </button>
+                    </Form>
+                ) : (
+                    <Form method="post">
+                        <button
+                            className="action"
+                            type="submit"
+                            name="intent"
+                            value="archive"
+                            title={locale === 'id' ? 'Arsipkan' : 'Archive'}
+                        >
+                            <FiArchive />
+                        </button>
+                    </Form>
+                )}
+                <Form method="post">
+                    <button
+                        className="action"
+                        type="submit"
+                        name="intent"
+                        value="delete"
+                        title={locale === 'id' ? 'Hapus' : 'Delete'}
+                    >
+                        <FiTrash2 />
+                    </button>
+                </Form>
+            </div>
+        </section>
+    );
 }
-
-DetailPage.propTypes = {
-    id: PropTypes.string.isRequired,
-    navigate: PropTypes.func.isRequired,
-};
-
-function DetailPageWrapper() {
-    const { id } = useParams();
-    const navigate = useNavigate();
-
-    return <DetailPage id={id} navigate={navigate} />;
-}
-
-export default DetailPageWrapper;

@@ -1,69 +1,39 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useSearchParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import NotesList from '../components/NotesList';
-import { getArchivedNotes } from '../utils/local-data';
+import SearchBar from '../components/SearchBar';
+import { getArchivedNotes } from '../utils/network-data';
+import useNoteSearch from '../hooks/useNoteSearch';
+import LocaleContext from '../contexts/LocaleContext';
 
-class ArchiveNotes extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            notes: getArchivedNotes(),
-            keyword: props.defaultKeyword || '',
-        };
-
-        this.onKeywordChangeHandler = this.onKeywordChangeHandler.bind(this);
+export async function archivePageLoader() {
+    const { error, data } = await getArchivedNotes();
+    if (error) {
+        return [];
     }
-
-    onKeywordChangeHandler(keyword) {
-        this.setState({ keyword });
-        this.props.keywordChange(keyword);
-    }
-
-    render() {
-        const filteredNotes = this.state.notes.filter((note) =>
-            note.title.toLowerCase().includes(this.state.keyword.toLowerCase())
-        );
-
-        return (
-            <section className="archives-page">
-                <h2>Catatan Terarsip</h2>
-
-                <div className="search-bar">
-                    <input
-                        type="text"
-                        placeholder="Cari catatan terarsip..."
-                        value={this.state.keyword}
-                        onChange={(e) => this.onKeywordChangeHandler(e.target.value)}
-                    />
-                </div>
-
-                <NotesList notes={filteredNotes} />
-            </section>
-        );
-    }
+    return data;
 }
 
-ArchiveNotes.propTypes = {
-    defaultKeyword: PropTypes.string,
-    keywordChange: PropTypes.func.isRequired,
-};
+export default function ArchivePage() {
+    const { locale } = useContext(LocaleContext);
+    const notes = useLoaderData();
+    const { keyword, handleSearch, filteredNotes } = useNoteSearch(notes);
 
-function ArchiveNotesWrapper() {
-    const [searchParams, setSearchParams] = useSearchParams();
-    const keyword = searchParams.get('keyword') || '';
-
-    function changeSearchParams(keyword) {
-        setSearchParams(keyword ? { keyword } : {});
-    }
+    const isId = locale === 'id';
 
     return (
-        <ArchiveNotes
-            defaultKeyword={keyword}
-            keywordChange={changeSearchParams}
-        />
+        <section className="archives-page">
+            <h2>{isId ? 'Catatan Terarsip' : 'Archived Notes'}</h2>
+
+            <SearchBar
+                keyword={keyword}
+                keywordChange={handleSearch}
+                placeholder={
+                    isId ? 'Cari catatan terarsip...' : 'Search archived notes...'
+                }
+            />
+
+            <NotesList notes={filteredNotes} />
+        </section>
     );
 }
-
-export default ArchiveNotesWrapper;
