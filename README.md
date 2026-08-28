@@ -33,7 +33,7 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 | 2 | **Learn Basic JavaScript Programming** | 🟢 Completed | [JS Basics & Assessments](./exercise/) |
 | 3 | **Learn Front-End Web Development for Beginners** | 🟢 Completed | [Expense Tracker App](./expense-tracker-app/) |
 | 4 | **Learn Web Application Development with React** | 🟢 Completed | [Personal Notes App](./personal-notes-app/) |
-| 5 | **Learn Fundamental Web Applications with React** | 🟡 In Progress | [Personal Notes App with API](./personal-notes-app-with-api/) |
+| 5 | **Learn Fundamental Web Applications with React** | 🟡 In Progress | 🟢 [Sub 1: Notes App SPA](./notes-app-react/)<br>🟡 [Sub 2: Notes App SPA + API](./notes-app-react-with-api/) |
 | 6 | **Learn Basic AI** | ⚪ Pending | - |
 | 7 | **Learn Beginner Back-End Development with JavaScript** | ⚪ Pending | - |
 | 8 | **Learn Fundamental Back-End Development with JavaScript** | ⚪ Pending | - |
@@ -51,16 +51,17 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 
 ```bash
 .
-├── anime-dex/                    # AnimeDex SPA Web App (Belajar Dasar Pemrograman Web)
-├── exercise/                     # JS basics, unit testing & exercises (Belajar Dasar Pemrograman JavaScript)
-├── expense-tracker-app/          # Expense Tracker App (Belajar Membuat Front-End Web untuk Pemula)
-├── notes-app-react/              # Personal Notes App React variant
-├── personal-notes-app/           # Personal Notes App (Belajar Membuat Aplikasi Web dengan React)
-├── personal-notes-app-with-api/  # Personal Notes App with REST API (Belajar Pengembangan Aplikasi Web dengan React)
-├── VolunterPembuatanAplikasi/    # Volunteer / Side Project Repository
-├── .gitignore                    # Ignored Git files
-├── LICENSE                       # Repository License
-└── README.md                     # Main repository documentation
+├── anime-dex/                # AnimeDex SPA Web App (Belajar Dasar Pemrograman Web)
+├── exercise/                 # JS basics, unit testing & exercises (Belajar Dasar Pemrograman JavaScript)
+├── expense-tracker-app/      # Expense Tracker App (Belajar Membuat Front-End Web untuk Pemula)
+├── notes-app-react/          # Personal Notes App SPA - Sub 1 (Belajar Pengembangan Aplikasi Web dengan React)
+├── notes-app-react-with-api/ # Personal Notes App SPA + API - Sub 2 (Belajar Pengembangan Aplikasi Web dengan React)
+├── personal-notes-app/       # Personal Notes App (Belajar Membuat Aplikasi Web dengan React)
+├── VolunterPembuatanAplikasi/ # Git Submodule: Volunteer / Side Project Repository
+├── .gitignore                # Ignored Git files
+├── .gitmodules               # Git Submodules configuration
+├── LICENSE                   # Repository License
+└── README.md                 # Main repository documentation
 ```
 
 ## 💻 Tech Stack & Tools
