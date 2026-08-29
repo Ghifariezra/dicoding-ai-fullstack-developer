@@ -33,9 +33,9 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 | 2 | **Learn Basic JavaScript Programming** | 🟢 Completed | [JS Basics & Assessments](./exercise/) |
 | 3 | **Learn Front-End Web Development for Beginners** | 🟢 Completed | [Expense Tracker App](./expense-tracker-app/) |
 | 4 | **Learn Web Application Development with React** | 🟢 Completed | [Personal Notes App](./personal-notes-app/) |
-| 5 | **Learn Fundamental Web Applications with React** | 🟡 In Progress | 🟢 [Sub 1: Notes App SPA](./notes-app-react/)<br>🟡 [Sub 2: Notes App SPA + API](./notes-app-react-with-api/) |
+| 5 | **Learn Fundamental Web Applications with React** | 🟢 Completed | 🟢 [Sub 1: Notes App SPA](./notes-app-react/)<br>🟢 [Sub 2: Notes App SPA + API](./notes-app-react-with-api/) |
 | 6 | **Learn Basic AI** | ⚪ Pending | - |
-| 7 | **Learn Beginner Back-End Development with JavaScript** | ⚪ Pending | - |
+| 7 | **Learn Beginner Back-End Development with JavaScript** | 🟢 Completed | [Bookshelf API](./bookshelf-api/) |
 | 8 | **Learn Fundamental Back-End Development with JavaScript** | ⚪ Pending | - |
 
 ### 🌟 Bonus Intensive
@@ -52,6 +52,7 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 ```bash
 .
 ├── anime-dex/                # AnimeDex SPA Web App (Belajar Dasar Pemrograman Web)
+├── bookshelf-api/            # Bookshelf RESTful API (Belajar Membuat Aplikasi Back-End untuk Pemula)
 ├── exercise/                 # JS basics, unit testing & exercises (Belajar Dasar Pemrograman JavaScript)
 ├── expense-tracker-app/      # Expense Tracker App (Belajar Membuat Front-End Web untuk Pemula)
 ├── notes-app-react/          # Personal Notes App SPA - Sub 1 (Belajar Pengembangan Aplikasi Web dengan React)
