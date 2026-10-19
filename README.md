@@ -49,7 +49,7 @@ Official documentation for learning progress, projects, and portfolio for **Prog
 
 ## 📁 Repository Structure
 
-```bash
+``
 .
 ├── anime-dex/                # AnimeDex SPA Web App (Belajar Dasar Pemrograman Web)
 ├── bookshelf-api/            # Bookshelf RESTful API (Belajar Membuat Aplikasi Back-End untuk Pemula)
